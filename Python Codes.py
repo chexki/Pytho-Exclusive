@@ -15,4 +15,14 @@ dataset = pd.read_csv(r'E:\Folder1\Foleder\File.txt',header=0,delimiter='\t',low
                         
 
 #%%
-##                         
+## Find Missing Values
+
+print(dataset.isnull().sum())       # for whole dataset
+print(dataset['variable'].isnull().sum())       # for specific variable in dataset    
+                        
+                        
+# Treat Missing Values
+                        
+dataset = dataset.dropna(subset=['variable']) 
+
+                        
